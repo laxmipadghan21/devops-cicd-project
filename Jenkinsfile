@@ -16,7 +16,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t devops-flask-app:latest .'
+                sh 'docker build -t laxmipadghan21/devops-flask-app:latest .'
             }
         }  
         stage('Docker Push') {
