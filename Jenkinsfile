@@ -34,6 +34,12 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Kubernetes') {
+            steps {
+                 sh 'kubectl --insecure-skip-tls-verify=true apply -f Kubernetes/deployment.yaml'
+                 sh 'kubectl --insecure-skip-tls-verify=true apply -f Kubernetes/services.yaml'
+    }
+}
 
     }
 }
